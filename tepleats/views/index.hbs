@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>akash's school Academy</title>
+
+</head>
+
+<body>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: lightblue;
+            height: 2000px;
+        }
+        .part{
+            display: flex;
+            flex-direction: column;
+            background-position-y: -7rem;
+            color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-family: "Roboto", sans-serif;
+            z-index: 2;
+            height: 400px;
+            background-color: #000000;
+        }
+        h2{
+            text-align: center;
+        }
+        #part2{
+            display: flex;
+        }
+        .card1{
+            margin: 5px;
+            height: 250px;
+            width: 33.33%;
+            border-radius:10px;
+            border: 2px solid mediumturquoise;
+            {{!-- filter: blur(8px);
+            -webkit-filter: blur(8px); --}}
+        }
+        .tex1{
+            
+        } 
+        h3{
+            
+            text-align: center;
+            margin: 114px 10px;
+        }
+        .card2{
+            
+            margin: 5px;
+            height: 250px;
+            width: 33.33%;
+            border-radius:10px;
+            border: 2px solid mediumturquoise;
+        }
+        .card3{
+            
+            margin: 5px;
+            height: 250px;
+            width: 33.33%;
+            border-radius:10px;
+            border: 2px solid mediumturquoise;
+        }
+        .blur{
+            
+        }
+
+    </style>
+    {{>nevbar}}
+    <div>
+        <section class="part">
+            <div class="text">Welcome to akash's development </div>
+        </section>
+    </div>
+    <div>
+        <h2>our missen</h2>
+        <section class="part2" id="part2">
+            <div class="card1">
+                <div class="tex1">
+                    <h3>Information</h3>    
+                </div>
+                <p>A full stack web developer is a person who can develop both client and server software. In addition to mastering HTML and CSS, he/she also knows how to: Program a browser (like using JavaScript, jQuery, Angular, or Vue)</p>
+            </div>
+            <div class="card2">
+                <div class="tex2">
+                    <h3>Grouping Related</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="tex3">
+                    <h3>Relevance to User Journey</h3>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <h2>our missen</h2>
+        <section class="part3" id="part3">
+
+        </section>
+    </div>
+    {{>footer}}
+</body>
+</html>
+
+{{!-- background-image: url(/form/public/pic/1.jpg); --}}
+{{!-- background-image: url(/public/pic/download.jpeg)no-repeat center/cover;
+background-image: url(/public/pic/grouping-what-is-it-good-for_orig.png)no-repeat center/cover;
+background-image: url(/public/pic/bqtslmo0k4xkwqhhciiy.jpg) no-repeat center/cover; --}}

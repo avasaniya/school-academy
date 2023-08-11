@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contect US</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background-color: #52aadd;
+        height: 1300px;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 25px 0px;
+    }
+
+    .form {
+        margin: auto;
+        width: 100%;
+        border: 4px solid black;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 368px;
+        background-color: #fff;
+        padding: 26px;
+        border-radius: 33px;
+        position: relative;
+    }
+    .title {
+        font-size: 28px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        letter-spacing: -1px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    .title::before,
+    .title::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0px;
+        background-color: rgb(8, 8, 8);
+    }
+
+    .title::before {
+        width: 18px;
+        height: 18px;
+        background-color: rgb(52, 121, 223);
+    }
+
+    .title::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+    }
+
+    .message,
+    .signin {
+        color: rgba(88, 87, 87, 0.822);
+        font-size: 14px;
+    }
+
+    .signin {
+        text-align: center;
+    }
+
+    .signin a {
+        color: royalblue;
+    }
+
+    .signin a:hover {
+        text-decoration: underline royalblue;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .form label {
+        position: relative;
+    }
+
+    .form label .input {
+        width: 94%;
+        padding: 15px 1px 17px 10px;
+        outline: 0;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 10px;
+    }
+
+    .form label .input+span {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        color: grey;
+        font-size: 0.9em;
+        cursor: text;
+        transition: 0.3s ease;
+    }
+
+    .form label .input:placeholder-shown+span {
+        top: 15px;
+        font-size: 0.9em;
+    }
+
+    .form label .input:focus+span,
+    .form label .input:valid+span {
+        top: 30px;
+        font-size: 0.7em;
+        font-weight: 600;
+    }
+
+    .form label .input:valid+span {
+        color: green;
+    }
+
+    .button {
+        display: inline-block;
+        border-radius: 7px;
+        border: none;
+        background: #1875ff;
+        color: white;
+        font-family: inherit;
+        text-align: center;
+        font-size: 13px;
+        box-shadow: 0px 14px 56px -11px #1875ff;
+        width: 10em;
+        padding: 1em;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.4s;
+    }
+
+    .button span:after {
+        content: "for Send";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.7s;
+    }
+
+    .button:hover span {
+        padding-right: 3.55em;
+    }
+
+    .button:hover span:after {
+        opacity: 4;
+        right: 0;
+    }
+
+    @keyframes pulse {
+        from {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+        to {
+            transform: scale(1.8);
+            opacity: 0;
+        }
+    }
+
+    .footer {
+        background-color: rgb(0, 0, 0);
+        height: 50px;
+        color: aliceblue;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<body>
+    {{>nevbar}}
+    <h1>Contect Us</h1>
+    <form class="form" action="/contect" method="POST">
+        <p class="title">this is contect us</p>
+        <p class="message"></p>
+        <div class="flex">
+            <label>
+                <input name="Firstname" placeholder="" type="text" class="input" />
+                <span>Firstname</span>
+            </label>
+            <label>
+                <input name="Lastname" required="" placeholder="" type="text" class="input" />
+                <span>Lastname</span>
+            </label>
+        </div>
+        <label>
+                <span>What is your gender?</span><br>
+                <input type="radio" name="gender" required="" value="male"> Male <input type="radio" name="gender"
+                    required="" value="female"> Female
+        </label>
+        <label>
+            <span>Date of Birth</span>
+            <input name="dob" required="" placeholder="" type="date" class="input"/>
+        </label>
+        <label>
+            <input name="address" required="" placeholder="" type="text" class="input"/>
+            <span>Address</span>
+        </label>
+        <label>
+            <input name="landmark" required="" placeholder="" type="text" class="input"/>
+            <span>Landmark</span>
+        </label>
+        <label>
+            <input name="pincode" required="" placeholder="" type="text" class="input"/>
+            <span>Pincode</span>
+        </label>
+        <label>
+            <input name="Email" required="" placeholder="" type="email" class="input" />
+            <span>Email</span>
+        </label>
+        <label>
+            <input name="ContectNumber" required="" placeholder="" type="tel" class="input" />
+            <span>ContectNumber</span>
+        </label>
+        <label>
+            <input name="Message" required="" placeholder="" type="message" class="input" />
+            <span>Message</span>
+        </label>
+        <button class="button" style="vertical-align: middle">
+            <span>Submit</span>
+        </button>
+    </form>
+    {{>footer}}
+</body>
+</html>
