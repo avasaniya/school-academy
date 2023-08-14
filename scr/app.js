@@ -61,13 +61,27 @@ app.post("/ragistar", async (req,res) => {
 
             })
 
-            console.log("the sucsess prth " + registrarstudent);
+            // console.log("the sucsess prth " + registrarstudent);
+
+            //creat jwt a token 
 
             const cetoken = await registrarstudent.generateAuthToken();
-            console.log("the token prth" + cetoken);
+            // console.log("the token prth :-  " + cetoken);
 
+            // The res.cookie() function is used to set the cookie name to value.
+            // The value parameter may be a string or object converted to JSON.
+
+            res.cookie("jwt", cetoken, {
+
+                expires:new Date(Date.now() + 60000),
+                httpOnly:true
+
+            });
+
+            console.log(cookie);
+            
             const ragistered= await registrarstudent.save();
-            console.log("the page prth" + ragistered);
+            // console.log("the page prth" + ragistered);
 
             res.status(201).render("index");
 
@@ -88,8 +102,16 @@ app.post("/login", async (req, res) => {
         const resultemail = await Registrar.findOne({ Email: Email }) //ek email collection decument and uper nu class
         const isMatch = await bcrypt.compare(Password, resultemail.Password);
 
+        //creat jwt a token 
         const logintoken = await resultemail.generateAuthToken();
         console.log("the login parth" + logintoken);
+
+        res.cookie=("jwt",logintoken,{
+            expires:new Date(Date.now() + 60000),
+            httpOnly:true
+        });
+
+        // console.log(cookie);
 
         if (isMatch) {
 
@@ -105,7 +127,6 @@ app.post("/login", async (req, res) => {
         res.status(401).send('Inveild Login deteils');
     }
 });
-
 app.post("/contect", async (req, res) => {
     try {
 
@@ -124,6 +145,7 @@ app.post("/contect", async (req, res) => {
         })
         console.log("the sucsess prth " + contectstudent);
 
+        //creat jwt a token 
         const cotoken = await contectstudent.generateAuthToken();
         console.log("the token prth" + cotoken);
 
