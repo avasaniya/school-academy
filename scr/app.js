@@ -45,6 +45,10 @@ app.get("/contect", (req, res) => {
     res.render("E:/software/we&css/form/tepleats/views/contect.hbs");
 });
 
+app.get("/secreatkey", (req, res) => {
+    res.render("secreatkey.hbs");
+});
+
 app.post("/ragistar", async (req,res) => {
     try {
         const password = req.body.Password;//java
@@ -81,7 +85,8 @@ app.post("/ragistar", async (req,res) => {
 
             });
 
-            console.log(cookie);
+            // Get Cookie Value
+            console.log(`Get Cookie Value${res.cookie.jwt}`);
             
             const ragistered= await registrarstudent.save();
             // console.log("the page prth" + ragistered);
