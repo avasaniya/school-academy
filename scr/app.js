@@ -4,15 +4,18 @@ const path = require("path");
 const hbs = require("hbs");
 const app = express();
 const bcrypt = require("bcryptjs");
+const cookieparser =require("cookie-parser");
 
 
 require("./db/conn");
 const Registrar = require("../scr/model/registrar");
 const Contect = require("../scr/model/contect");
 const { log } = require("console");
+const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
+app.use(cookieParser());//midallver pass karvanu hoy tyare use thay 
 app.use(express.urlencoded({ extended: false }));
 // html thi apde deta add karva mate urlencoded no use thay che 
 
@@ -148,6 +151,17 @@ app.post("/contect", async (req, res) => {
         //creat jwt a token 
         const cotoken = await contectstudent.generateAuthToken();
         console.log("the token prth" + cotoken);
+
+        res.cookie("jwt",cotoken,{
+            
+            expires:new Date(Date.now()),
+            httpOnly:true
+            
+
+        });
+
+        console.log(cookie);
+
 
         const contectu = await contectstudent.save();
         console.log("the page prth" + contectu);
