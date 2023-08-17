@@ -5,74 +5,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>akash's school Academy</title>
-
+    {{!--
+    <link rel="stylesheet" href="/public/css/styl.css"> --}}
 </head>
+<style>
+    body {
+        padding: 0px;
+        margin: 0px;
+        background-color: lightblue;
+        height: 4000px;
+    }
+
+    .part {
+        display: flex;
+        flex-direction: column;
+        background-position-y: -7rem;
+        color: rgb(255, 255, 255);
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-family: "Roboto", sans-serif;
+        z-index: 2;
+        height: 400px;
+        background-color: #000000;
+    }
+
+    .WhatWeDoh1 {
+        text-align: center;
+    }
+
+    #part2 {
+        display: flex;
+    }
+
+    .card1 {
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+        border: 2px solid mediumturquoise;
+    }
+
+    .card2 {
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+        border: 2px solid mediumturquoise;
+    }
+
+    .card3 {
+
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+        border: 2px solid mediumturquoise;
+    }
+
+    .tex2 {
+        padding: 1px 0px 0px;
+        text-align: center;
+        margin: -2px;
+        background-color: #000000;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: aliceblue;
+        height: 58px;
+    }
+
+    .peregra2{
+        padding: 17px 17px 17px 17px;
+        font-size: 19px;
+        text-align: -webkit-center;
+
+    }
+
+    .Expertiseh2 {
+        text-align: center;
+    }
+
+    #part3 {
+        display: flex;
+    }
+
+    .Technologies1 {
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+
+    }
+
+    .Technologies2 {
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+
+    }
+
+    .Technologies3 {
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+
+    }
+
+    .tex3 {
+        text-align: center;
+        color: rgb(0, 0, 0);
+    }
+
+    .peregra3{
+        padding: 17px 17px 17px 17px;
+        font-size: 20px;
+        text-align: justify;
+
+    }
+     
+    #part4 {
+        display: flex;
+    }
+
+    .Testimonialsh1 {
+        text-align: center;
+    }
+
+    .Testimonials1 {
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+    }
+
+    .tex4 {
+        text-align: center;
+    }
+    .peregra4{
+        padding: 17px 17px 17px 17px;
+        font-size: 20px;
+        text-align: -webkit-center;
+    }
+    .h6{
+        text-align: center;
+        font-style: oblique;
+    }
+
+    .Technologies{
+        text-align: center;
+    }
+    #part5{
+        display: flex;
+        margin-inline-start: 80px;
+        margin-inline-end: 80px;
+    }
+    .cardbox{
+        border: 2px solid red;
+        margin: 5px;
+        height: 330px;
+        width: 33.33%;
+        border-radius: 10px;
+    }
+    .tex5{
+        text-align: center;
+    }
+    .peregra5{
+        padding: 17px 17px 17px 17px;
+        font-size: 20px;
+        text-align: -webkit-center;
+    }
+</style>
 
 <body>
-    <style>
-        body {
-            padding: 0px;
-            margin: 0px;
-            background-color: lightblue;
-            height: 2000px;
-        }
-        .part{
-            display: flex;
-            flex-direction: column;
-            background-position-y: -7rem;
-            color: rgb(255, 255, 255);
-            justify-content: center;
-            align-items: center;
-            font-size: 25px;
-            font-family: "Roboto", sans-serif;
-            z-index: 2;
-            height: 400px;
-            background-color: #000000;
-        }
-        h2{
-            text-align: center;
-        }
-        #part2{
-            display: flex;
-        }
-        .card1{
-            margin: 5px;
-            height: 250px;
-            width: 33.33%;
-            border-radius:10px;
-            border: 2px solid mediumturquoise;
-            {{!-- filter: blur(8px);
-            -webkit-filter: blur(8px); --}}
-        }
-        .tex1{
-            
-        } 
-        h3{
-            
-            text-align: center;
-            margin: 114px 10px;
-        }
-        .card2{
-            
-            margin: 5px;
-            height: 250px;
-            width: 33.33%;
-            border-radius:10px;
-            border: 2px solid mediumturquoise;
-        }
-        .card3{
-            
-            margin: 5px;
-            height: 250px;
-            width: 33.33%;
-            border-radius:10px;
-            border: 2px solid mediumturquoise;
-        }
-        .blur{
-            
-        }
-
-    </style>
     {{>nevbar}}
     <div>
         <section class="part">
@@ -80,39 +186,169 @@
         </section>
     </div>
     <div>
-        <h2>our missen</h2>
+        <h1 class="WhatWeDoh1">What We Do</h1>
         <section class="part2" id="part2">
             <div class="card1">
-                <div class="tex1">
-                    <h3>Information</h3>    
+                <div class="tex2">
+                    <h3>Systems design</h3>
                 </div>
-                <p>A full stack web developer is a person who can develop both client and server software. In addition to mastering HTML and CSS, he/she also knows how to: Program a browser (like using JavaScript, jQuery, Angular, or Vue)</p>
+                <p class="peregra2">This is the creative, interactive process where we sit with you to get an in-depth understanding of
+                    your needs. We translate these needs to a technical solution. During and after development we keep
+                    on monitoring if needs change and if the solution keeps delivering. If not, we suggest changes.</p>
             </div>
             <div class="card2">
                 <div class="tex2">
-                    <h3>Grouping Related</h3>
-                    <p></p>
+                    <h3>Development</h3>
                 </div>
+                <p class="peregra2">Development is the process of implementing the system design. We believe in an organic agile
+                    approach. We continuously do (unit) testing and we involve our clients intensively during the
+                    implementation process, allowing for adjustments that improve the end result.</p>
             </div>
             <div class="card3">
-                <div class="tex3">
-                    <h3>Relevance to User Journey</h3>
-                    <p></p>
+                <div class="tex2">
+                    <h3>Hosting</h3>
                 </div>
+                <p class="peregra2">Every web application needs a reliable environment available on the internet to be able to
+                    deliver. Too often we have had to fix sites that were hacked and servers that kept failing.
+                    Hence we decided to build our own extremely relaible and secure cloud environment to host our
+                    clients' applications.</p>
+
+            </div>
+            <div class="card3">
+                <div class="tex2">
+                    <h3>Support</h3>
+                </div>
+                <p class="peregra2">Needs change, users change, platforms and environments need security updates. No web application
+                    deployment is static. However well built, like with a car, if you don't service, in the end it
+                    will break. DITS will always support whatever it built however long ago it was built.</p>
             </div>
         </section>
     </div>
     <div>
-        <h2>our missen</h2>
+        <h1 class="Expertiseh2">Expertise</h1>
         <section class="part3" id="part3">
-
+            <div class="Technologies1">
+                <div class="tex3">
+                    <h3>Knowledge management</h3>
+                </div>
+                <p class="peregra3">DITS works extensively organisations like the Human Sciences Research Council, Management Sciences
+                    for Health, South African Journal of Sciences, and the South African Monitoring and Evaluation
+                    Association. Thus DITS has gathered extensive insights in ways to disseminate knowledge and how to
+                    allow exchanging and sharing knowledge.</p>
+            </div>
+            <div class="Technologies2">
+                <div class="tex3">
+                    <h3>Continuous improvement</h3>
+                </div>
+                <p class="peregra3">Over the past few years, in association with IMPEC, DITS developed a platform for Continuous
+                    Improvement. This Laravel based platform assists organisations in measuring their performance,
+                    identifying ways to improve, and monitoring the impact of improvement initiatives. The Department
+                    for Planning Monitoring and Evaluation in the Presidency is our first client for this platform.</p>
+            </div>
+            <div class="Technologies3">
+                <div class="tex3">
+                    <h3>Research data curation</h3>
+                </div>
+                <p class="peregra3">Organisations that do research have a responsibility to properly manage and curate the data collected
+                    during that research. DITS has helped creating system disseminating these data and enabling the use
+                    of these data for secondary analysis. In the process DITS abouth these data as well as about the
+                    intentions and corncerns researchers have regarding the proper use of their research.</p>
+            </div>
+        </section>
+    </div>
+    <div>
+        <h1 class="Testimonialsh1">Testimonials</h1>
+        <section class="part4" id="part4">
+            <div class="Testimonials1">
+                <div class="tex4">
+                    <h2>Dugan Fraser</h2>
+                    <h3>Chairman of the board</h3>
+                </div>
+                <p class="peregra4">On behalf of SAMEA we thank Development IT Solutions for all their support and excellent service over
+                    the past twelve years.</p>
+                <div class="h6">
+                        <h5>SAMEA</h5>
+                </div>      
+            </div>
+            <div class="Testimonials1">
+                <div class="tex4">
+                    <h2>Henk Serfontein</h2>
+                    <h3>Director</h3>
+                </div>
+                <p class="peregra4">This is the first time we have had a system developed and at the end realise that we actually got
+                    what we asked for.</p>
+                <div class="h6">
+                    <h5>Department for Planning Monitoring and <br> Evaluation in the Presidency</h5>
+                </div>  
+            </div>
+            <div class="Testimonials1">
+                <div class="tex4">
+                    <h2>lucia Lotter</h2>
+                    <h3>Manager Data Curation</h3>
+                </div>
+                <p class="peregra4">It is always a pleasure working with Development IT Solutions. They understand our needs and they
+                    deliver what they promise.</p>
+                <div class="h6">
+                        <h5>Human Sciences Research Council</h5>
+                </div>    
+            </div>
+        </section>
+    </div>
+    <div>
+        <h1 class="Technologies">Technologies we use</h1>
+        <section class="part5" id="part5">
+            <div class="cardbox">
+                <div class="tex5">
+                    <h3>Laravel</h3>
+                </div>
+                <p class="peregra5">Laravel is a free, open-source PHP web framework intended for the rapid development of web applications following the model–view–controller (MVC) architectural pattern</p>
+            </div>
+            <div class="cardbox">
+                <div class="tex5">
+                    <h3>October CMS</h3>
+                </div>
+                <p class="peregra5">October is a free, open-source CMS platform based on the Laravel PHP Framework. A simple and modular CMS that grows with you, with a precise and beautiful interface that comes as second nature.</p>
+            </div>
+                        <div class="cardbox">
+                <div class="tex5">
+                    <h3>Drupal</h3>
+                </div>
+                <p class="peregra5">Drupal is a free, open-source CMS platform. Drupal has great standard features, like easy content authoring, reliable performance, and excellent security. Modularity is one of its core principles.</p>
+            </div>
+                        <div class="cardbox">
+                <div class="tex5">
+                    <h3>CodeIgniter</h3>
+                </div>
+                <p class="peregra5">CodeIgniter is a free, open-source PHP framework with a very small footprint. We support Codeigniter for legacy projects but prefer and recommend Laravel for new projects.</p>
+            </div>
+        </section>
+        <section class="part5" id="part5">
+            <div class="cardbox">
+                <div class="tex5">
+                    <h3>PHP</h3>
+                </div>
+                <p class="peregra5">We develop 99% of what we do in PHP. PHP is free, open source, scalable, secure, object oriented and used in the most popular web application frameworks.</p>
+            </div>
+            <div class="cardbox">
+                <div class="tex5">
+                    <h3>HTML5</h3>
+                </div>
+                <p class="peregra5">HTML5 is a new version of the language HTML, with new elements, attributes, and behaviors, as well as a larger set of technologies that allows more diverse and powerful Web sites and applications.</p>
+            </div>
+                        <div class="cardbox">
+                <div class="tex5">
+                    <h3>CSS3</h3>
+                </div>
+                <p class="peregra5">CSS3 is the latest evolution of the Cascading Style Sheets language. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts.</p>
+            </div>
+                        <div class="cardbox">
+                <div class="tex5">
+                    <h3>Bootstrap</h3>
+                </div>
+                <p class="peregra5">Bootstrap offers us a responsive, mobile-first, prevailing, front-end framework, which is developed along with CSS3, JavaScript, and HTML5.</p>
+            </div>
         </section>
     </div>
     {{>footer}}
 </body>
 </html>
-
-{{!-- background-image: url(/form/public/pic/1.jpg); --}}
-{{!-- background-image: url(/public/pic/download.jpeg)no-repeat center/cover;
-background-image: url(/public/pic/grouping-what-is-it-good-for_orig.png)no-repeat center/cover;
-background-image: url(/public/pic/bqtslmo0k4xkwqhhciiy.jpg) no-repeat center/cover; --}}

@@ -47,7 +47,7 @@ const schoolacademy = new mongoose.Schema({
 schoolacademy.methods.generateAuthToken = async function(){
     try {
         console.log("collection id :- "+this._id);//this keyword no use id pachina jetla document hoy tene show karva mate use thay che 
-        const cetoken=await jwt.sign({_id:this._id.toString()},process.env.SECRET_KEY);
+        const cetoken=await jwt.sign({_id:this._id.toString()}, process.env.SECRET_KEY);
         this.tokens=this.tokens.concat({token:cetoken});
         await this.save();
         return cetoken;

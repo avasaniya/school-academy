@@ -4,8 +4,8 @@ const path = require("path");
 const hbs = require("hbs");
 const app = express();
 const bcrypt = require("bcryptjs");
-const cookieparser =require("cookie-parser");
-
+const cookieparser = require("cookie-parser");
+// const auth = require("../scr/middleware/auth");
 
 require("./db/conn");
 const Registrar = require("../scr/model/registrar");
@@ -17,21 +17,48 @@ const port = process.env.PORT || 8000;
 app.use(express.json());
 app.use(cookieParser());//midallver pass karvanu hoy tyare use thay 
 app.use(express.urlencoded({ extended: false }));
+
+
 // html thi apde deta add karva mate urlencoded no use thay che 
 
-const staticpath = path.join(__dirname, "../public");
+const static_path = path.join(__dirname, "../public");
 const tepleatspath = path.join(__dirname, "../tepleats/views");
 const partialspath = path.join(__dirname, "../tepleats/partials");
 
-app.use(express.static(staticpath));
+app.use(express.static(static_path));
 app.set("view engine", "hbs");
 app.set("views", tepleatspath);
 hbs.registerPartials(partialspath);
 hbs.registerPartials(tepleatspath);
 
+
 app.get("/", (req, res) => {
     res.render("E:/software/we&css/form/tepleats/views/index.hbs");
 });
+
+app.get("/secreatkey",(req, res) => { 
+    // Get Cookie Value
+    console.log(`this is show cookies id :- ${req.cookies.loginjwt}`);
+    res.render("secreatkey");
+});
+
+// app.get("/logout",auth,async(req,res)=>{
+//     try {
+//         console.log(res.User);
+// //currelemt token ne logout ni harej remove karva mate thay che 
+//         req.User.token = req.User.token.filter((currentElement) => {
+//             return currentElement.token !== req.token 
+//         });
+
+//         res.clearCookie("jwt");
+//         console.log("logout successfully Done...");
+
+//         await res.User.save();
+//         res.render("login");
+//     } catch (error) {
+//         res.status(401).send(error);
+//     }
+// })
 
 app.get("/ragistar", (req, res) => {
     res.render("E:/software/we&css/form/tepleats/views/ragistar.hbs");
@@ -45,11 +72,7 @@ app.get("/contect", (req, res) => {
     res.render("E:/software/we&css/form/tepleats/views/contect.hbs");
 });
 
-app.get("/secreatkey", (req, res) => {
-    res.render("secreatkey.hbs");
-});
-
-app.post("/ragistar", async (req,res) => {
+app.post("/ragistar", async (req, res) => {
     try {
         const password = req.body.Password;//java
         const CPassword = req.body.ConfirmPassword;//java
@@ -63,8 +86,8 @@ app.post("/ragistar", async (req,res) => {
                 gender: req.body.gender,
                 Email: req.body.Email,
                 ContectNumber: req.body.ContectNumber,
-                Password: password,          //java req.body.Password,
-                ConfirmPassword: CPassword,  //java req.body.ConfirmPassword,
+                Password: password,             //java req.body.Password,
+                ConfirmPassword: CPassword,     //java req.body.ConfirmPassword,
 
             })
 
@@ -78,17 +101,18 @@ app.post("/ragistar", async (req,res) => {
             // The res.cookie() function is used to set the cookie name to value.
             // The value parameter may be a string or object converted to JSON.
 
-            res.cookie("jwt", cetoken, {
+            // res.cookie("registrar",cetoken); 
 
-                expires:new Date(Date.now() + 60000),
-                httpOnly:true
+            res.cookie('registrar', cetoken, {
+
+                expires: new Date(Date.now() + 60000),
+                httpOnly: true
 
             });
 
-            // Get Cookie Value
-            console.log(`Get Cookie Value${res.cookie.jwt}`);
             
-            const ragistered= await registrarstudent.save();
+
+            const ragistered = await registrarstudent.save();
             // console.log("the page prth" + ragistered);
 
             res.status(201).render("index");
@@ -108,19 +132,24 @@ app.post("/login", async (req, res) => {
         const Password = req.body.Password;
 
         const resultemail = await Registrar.findOne({ Email: Email }) //ek email collection decument and uper nu class
-        const isMatch = await bcrypt.compare(Password, resultemail.Password);
+
 
         //creat jwt a token 
-        const logintoken = await resultemail.generateAuthToken();
-        console.log("the login parth" + logintoken);
+        const tokenlog = await resultemail.generateAuthToken(); 
+        console.log("the login parth:- " + tokenlog);
 
-        res.cookie=("jwt",logintoken,{
-            expires:new Date(Date.now() + 60000),
-            httpOnly:true
+        // methord-1
+        // //creat tooken kara pachi show kara va mate token name and ganret thayel id
+        // res.cookie("loginjwt", tokenlog);
+        
+        //apnu cookie male ayre tene ketlo time rakh vu che te na mate expires no use
+        res.cookie('loginjwt', tokenlog,{
+            expires: new Date(Date.now() + 600000),
+            httpOnly: true
+            // secure:true
         });
 
-        // console.log(cookie);
-
+        const isMatch = await bcrypt.compare(Password, resultemail.Password);
         if (isMatch) {
 
             res.status(201).render("index");
@@ -135,6 +164,7 @@ app.post("/login", async (req, res) => {
         res.status(401).send('Inveild Login deteils');
     }
 });
+
 app.post("/contect", async (req, res) => {
     try {
 
@@ -157,11 +187,11 @@ app.post("/contect", async (req, res) => {
         const cotoken = await contectstudent.generateAuthToken();
         console.log("the token prth" + cotoken);
 
-        res.cookie("jwt",cotoken,{
-            
-            expires:new Date(Date.now()),
-            httpOnly:true
-            
+        res.cookie("jwt", cotoken, {
+
+            expires: new Date(Date.now()),
+            httpOnly: true
+
 
         });
 
@@ -172,7 +202,7 @@ app.post("/contect", async (req, res) => {
         console.log("the page prth" + contectu);
 
         res.status(201).render("index");
-    } catch (error){
+    } catch (error) {
         res.status(401).send(error);
         console.log("page error");
     }

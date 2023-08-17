@@ -1,0 +1,108 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: lightblue;
+    height: 2000px;
+}  
+.part {
+    display: flex;
+    flex-direction: column;
+    background-position-y: -7rem;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    z-index: 2;
+    height: 400px;
+    background-color: #000000;
+}
+
+h2 {
+    text-align: center;
+}
+
+#part2 {
+    display: flex;
+}
+
+.card1 {
+    margin: 5px;
+    height: 330px;
+    width: 33.33%;
+    border-radius: 10px;
+    border: 2px solid mediumturquoise;
+}
+
+.card2 {
+    margin: 5px;
+    height: 330px;
+    width: 33.33%;
+    border-radius: 10px;
+    border: 2px solid mediumturquoise;
+}
+
+.card3 {
+
+    margin: 5px;
+    height: 330px;
+    width: 33.33%;
+    border-radius: 10px;
+    border: 2px solid mediumturquoise;
+}
+
+.tex2 {
+    padding: 1px 0px 0px;
+    text-align: center;
+    margin: -2px;
+    background-color: #000000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: aliceblue;
+    height: 58px;
+}
+
+i {
+    border: 2px solid red;
+    color: #0d0d0d;
+}
+
+p {
+    padding: 17px 17px 17px 17px;
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+#part3 {
+    display: flex;
+}
+
+.Technologies1 {
+    margin: 5px;
+    height: 330px;
+    width: 33.33%;
+    border-radius: 10px;
+
+}
+
+.Technologies2 {
+    margin: 5px;
+    height: 330px;
+    width: 33.33%;
+    border-radius: 10px;
+
+}
+
+.Technologies3 {
+    margin: 5px;
+    height: 330px;
+    width: 33.33%;
+    border-radius: 10px;
+
+}
+
+.tex3 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
