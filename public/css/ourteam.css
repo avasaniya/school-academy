@@ -1,0 +1,248 @@
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: lightblue;
+
+    }
+
+    .our {
+        height: 200px;
+        background-color: black;
+        margin: -22px 0px;
+    }
+
+
+    h1 {
+        text-align: center;
+        padding: 82px 9px;
+        color: aliceblue;
+    }
+
+    .parta {
+        text-align: center;
+    }
+
+    .partb {
+        text-align: justify;
+        font-size: 24px;
+        padding: 0px 60px;
+    }
+
+    .b1 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card1 {
+        margin: 14px;
+        height: 300px;
+        width: 36.33%;
+        border-radius: 10px;
+        background:url(/public/pic/grou.png);
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .card1:hover{
+         background-color: rgb(0, 0, 0);
+    }
+    
+    .tex1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }
+
+    /* {{!-- pregraft --}} */
+    .peregra1{
+        font-size: 20px;
+    }
+        .peregra2{
+        font-size: 15px;
+    }
+    /* {{!-- Project Management Team --}} */
+
+    .partc {
+        text-align: center;
+    }
+
+    .b2 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card2 {
+        margin: 14px;
+        height: 300px;
+        width: 36.33%;
+        border-radius: 10px;
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+    .card2:hover{
+         background-color: rgb(0, 0, 0);
+    }
+    .tex2 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }
+
+    .card2-2 {
+    margin: 14px;
+    height: 300px;
+    width: 22%;
+    border-radius: 10px;
+    border: 3px solid mediumturquoise;
+    background-color: rgb(255, 255, 255);
+    }
+    
+    .card2-2:hover{
+         background-color: rgb(0, 0, 0);
+    }
+
+
+    /* {{!-- Monitoring, Evaluation and Learning Team --}} */
+    .partd {
+        text-align: center;
+    }
+
+    .b3 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card3{
+        margin: 14px;
+        height: 300px;
+        width: 36.33%;
+        border-radius: 10px;
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+    .card3:hover{
+         background-color: rgb(0, 0, 0);
+         
+    }
+    .tex3 {
+        color: white;
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }
+
+
+    /* {{!-- HR and Operations Team --}} */
+
+    .parte {
+        text-align: center;
+    }
+
+    .b4 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card4{
+        margin: 14px;
+        height: 300px;
+        width: 36.33%;
+        border-radius: 10px;
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+    .card4:hover{
+         background-color: rgb(0, 0, 0);
+    }
+    .tex4 {
+        color: white;
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }
+    
+    /* {{!-- HR and Operations Team --}} */
+
+    .partf {
+        text-align: center;
+    }
+
+    .b5 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card5{
+        margin: 14px;
+        height: 300px;
+        width: 22%;
+        border-radius: 10px;
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+    .card5:hover{
+         background-color: rgb(0, 0, 0);
+    }
+    .tex5 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }
+
+    /* {{!-- Communications Team --}} */
+    
+    .parti {
+        text-align: center;
+    }
+
+    .b6 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card6{
+        margin: 14px;
+        height: 300px;
+        width: 22%;
+        border-radius: 10px;
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+    .card6:hover{
+         background-color: rgb(0, 0, 0);
+    }
+    .tex6{
+        color: rgb(255, 255, 255);
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }
+
+
+            /* {{!-- Business Development Team --}} */
+
+
+    .partg {
+        text-align: center;
+    }
+
+    .b7 {
+        display: flex;
+        padding: 0px 56px;
+    }
+
+    .card7{
+        margin: 14px;
+        height: 300px;
+        width: 22%;
+        border-radius: 10px;
+        border: 3px solid mediumturquoise;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .card7:hover{
+         background-color: rgb(0, 0, 0);
+    }
+
+    .tex7{
+        color: rgb(255, 255, 255);
+        text-align: center;
+        margin: 7.8rem 0rem;
+    }

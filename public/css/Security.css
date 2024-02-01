@@ -1,0 +1,18 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: lightblue;
+}
+.size {
+    display: flex;
+    flex-direction: column;
+    background-position-y: -7rem;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    z-index: 2;
+    height: 400px;
+    background-color: #000000;
+}

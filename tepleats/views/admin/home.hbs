@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin profile</title>
+</head>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightblue;
+    }
+
+    .profile {
+        height: 200px;
+        background-color: black;
+        margin: -22px 0px;
+
+    }
+
+    h1 {
+        text-align: center;
+        padding: 83px 0px;
+        color: #fff;
+    }
+
+    .teble {
+        border: 4px solid rgb(0, 0, 0);
+        margin: 60px 26%;
+        padding: 50px 50px;
+        border-radius: 15px;
+        background-color: white;
+    }
+
+    .name {
+        background-color: white;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .userdata {
+
+        font-size: 20px;
+        padding: 7px 40px
+    }
+
+    .btn {
+        margin: 37px 8.3rem -6px 157px
+    }
+</style>
+
+<body>
+    {{>adminnevbar}}
+    <div class="profile">
+        <h1>welcom, {{admin.Firstname}}&nbsp;{{admin.Lastname}}</h1>
+    </div>
+    <div id="teble" class="teble">
+        <table>
+            <tr>
+                <td class="name">Firstname:-</td>
+                <td class="userdata">{{admin.Firstname}}</td>
+            </tr>
+            <tr>
+                <td class="name">Lastname:-</td>
+                <td class="userdata">{{admin.Lastname}}</td>
+            </tr>
+            <tr>
+                <td class="name">Email:-</td>
+                <td class="userdata">{{admin.Email}}</td>
+            </tr>
+            <tr>
+                <td class="name">gender:-</td>
+                <td class="userdata">{{admin.gender}}</td>
+            </tr>
+            <tr>
+                <td class="name">ContectNumber:-</td>
+                <td class="userdata">{{admin.ContectNumber}}</td>
+            </tr>
+        </table>
+        <div class="btn">
+            <button style="background-color: black; :hover box-shadow: 10x;"><a href="/edit"
+                    style="color: rgb(255, 255, 255); text-decoration: none;"> Edit Details</a></button>
+            <button style="background-color: black;"><a href="/admin/dashboard"
+                    style="color: rgb(255, 255, 255); text-decoration: none;"> dashboard </a></button>
+        </div>
+
+    </div>
+    {{>footer}}
+</body>
+
+</html>
+
+
+
+{{!--
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+</head>
+
+<body>
+    {{>adminnevbar}}
+    <a href="/admin/home" style="color: rgb(249, 0, 0);">Go To Home</a>
+    <h1>Dashboard</h1>
+
+
+
+    <table class="teble">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Contect Number</th>
+            <th>verified</th>
+        </tr>
+        {{
+        {{if(user.length > 0){
+        for(i=0,i<user.length;i++){ {{ <tr>
+            <td>{{ users[i].Firstname }}</td>
+            <td>{{ users[i].Lastname }}</td>
+            <td>{{ users[i].gender }}</td>
+            <td>{{ users[i].Email }}</td>
+            <td>{{ users[i].ContectNumber }}</td>
+            <td>{{ users[i].is_verified }}</td>
+            </tr>
+            }}
+            }
+            }
+            }}
+            {{ease{
+
+            <tr>
+                <td colspan="5">User is not found</td>
+            </tr>
+
+            }
+            }}
+            }}
+    </table>
+</body>
+
+</html>
+--}}

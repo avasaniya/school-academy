@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightblue;
+    }
+
+    .dashbord {
+        height: 200px;
+        background-color: black;
+
+        margin: -22px 0px;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 83px 0px;
+        color: #fff;
+        font-variant: small-caps;
+
+    }
+
+    .homelink {
+        margin: 19px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .homelink:hover {
+        color: rgb(255, 1, 1);
+    }
+
+    .teble {
+        border: 2px solid rgb(0, 0, 0);
+        margin: 20px 77px 20px 77px;
+        padding: 11px 23px 11px 23px;
+        border-radius: 15px;
+
+    }
+
+    th {
+        border: 2px solid black;
+        background-color: black;
+        color: white;
+    }
+
+    td {
+
+        width: 139px;
+        text-align: center;
+    }
+
+    .Edit {
+        display: block;
+        margin: 0px 90px 0px 1px;
+        padding: 2px 10px;
+    }
+
+    .delete {
+
+        display: block;
+        margin: -24px 0px 0px 67px;
+        padding: 2px 10px;
+
+    }
+
+    .edituser {
+        color: black;
+    }
+
+    .edituser:hover {
+        color: red;
+    }
+
+    .button {
+        margin: 0px -40rem 0px 19rem;        
+        overflow: auto;
+    };
+
+    .adduserlink{
+        text-decoration: none;
+        color: black;
+    }
+
+    .adduserlink:hover {
+        color: red;
+    }
+
+    .export-excel{
+        text-decoration: none;
+        color: black;
+    }
+    .export-excel:hover {
+        color: red;
+    }
+    .export-pdf{
+        text-decoration: none;
+        color: black;
+    }
+    .export-pdf:hover {
+        color: red;
+    }
+
+</style>
+<body>
+    <%- include ('E:/software/we&css/form/tepleats/partials/adminnevbar.hbs') %>
+        <div class="dashbord">
+            <h1>Dashboard</h1>
+            <a class="homelink" href="/admin/home">
+                < Go To Home</a>
+                    <table class="teble">
+                        <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Contect Number</th>
+                            <th>verified</th>
+                            <th>Edit User</th>
+
+                        </tr>
+
+                        <% if(users.length> 0){
+                            for(let i=0;i<users.length;i++){ %>
+                                <tr>
+                                    <td>
+                                        <%=users[i].Firstname%>
+                                    </td>
+                                    <td>
+                                        <%=users[i].Lastname%>
+                                    </td>
+                                    <td>
+                                        <%=users[i].Email%>
+                                    </td>
+                                    <td>
+                                        <%=users[i].gender%>
+                                    </td>
+                                    <td>
+                                        <%=users[i].ContectNumber%>
+                                    </td>
+                                    <td>
+                                        <% if(users[i].is_verified==0){ %>
+                                            <p>Not verified</p>
+                                            <% } else{ %>
+                                                <p>verified</p>
+                                                <% } %>
+                                    </td>
+                                    <td>
+                                        <button class="Edit">
+                                            <a class="edituser" style="text-decoration: none;"
+                                                href="/admin/edituser?id=<%=users[i]._id%>"> Edit </a>
+                                        </button>
+                                        <button class="delete">
+                                            <a class="edituser" style="text-decoration: none;"
+                                                href="/admin/delete?id=<%=users[i]._id%>"> Delete </a>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <% } }else{ %>
+                                    <tr>
+                                        <td colspan="6"> Users are not fuond..</td>
+                                    </tr>
+                                    <% }%>
+                                        <tr>
+                                            <td>
+                                                <button class="button">
+                                                    <a class="adduserlink" href="/admin/adduser">Add New User</a>
+                                                </button>
+                                                <button class="button">
+                                                    <a class="export-excel" href="/admin/export-user">Excel File Export</a>
+                                                </button>
+                                                <button class="button">
+                                                    <a class="export-pdf" href="/admin/exportuserpdf">PDF File Export</a>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+
+                    </table>
+                    <%- include ('E:/software/we&css/form/tepleats/views/footer.hbs') %>
+        </div>
+</body>
+
+</html>

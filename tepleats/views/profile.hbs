@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+    <style>
+            body {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightblue;
+    }
+
+    .profile{
+        height: 200px;
+        background-color: black;
+        margin: -22px 0px;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 83px 0px;
+        color: #fff;
+    }
+    .teble{
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 33px;
+        margin: 60px 26%;
+        padding: 50px 50px;
+
+    }
+    .name{
+        background-color: white;
+        text-align: center;
+    }
+    .userdata{
+        
+        font-size: 20px;
+        padding: 7px 40px
+    }
+    .btn{
+            margin: 27px 12.3rem -5px;
+    }
+</style>
+<body>
+    {{>nevbar}} 
+    <div class="profile">
+        <h1>welcome , {{user.Firstname}} {{user.Lastname}}</h1>
+
+    </div>
+
+    <div id="teble" class="teble">
+    <table>
+        <tr>
+            <td class="name">Firstname:-</td>
+            <td class="userdata">{{user.Firstname}}</td>
+        </tr>
+        <tr>
+            <td class="name">Lastname:-</td>
+            <td class="userdata">{{user.Lastname}}</td>
+        </tr>
+        <tr>
+            <td class="name">Email:-</td>
+            <td class="userdata">{{user.Email}}</td>
+        </tr>
+        <tr>
+            <td class="name">gender:-</td>
+            <td class="userdata">{{user.gender}}</td>
+        </tr>
+        <tr >
+            <td class="name">ContectNumber:-</td>
+            <td class="userdata">{{user.ContectNumber}}</td>
+        </tr>
+    </table>
+    <div class="btn">
+        <button><a href="/edit"> Edit Details</a></button>
+    </div>
+    
+    </div>
+{{>footer}}
+</body>
+</html>

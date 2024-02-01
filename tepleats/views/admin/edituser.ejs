@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit user informetion by Admin</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: lightblue;
+
+    }
+
+    .Registrar {
+        height: 200px;
+        background-color: black;
+        margin: -22px 0px;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 82px 9px;
+        color: aliceblue;
+        font-variant: small-caps;
+        
+    }
+
+
+    .form {
+        margin: auto;
+        width: 100%;
+        border: 4px solid black;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        max-width: 351px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 33px;
+        position: relative;
+    }
+
+    .title {
+
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+
+    .title::before,
+    .title::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0px;
+        background-color: rgb(8, 8, 8);
+    }
+
+    .title::before {
+        width: 18px;
+        height: 18px;
+        background-color: rgb(52, 121, 223);
+    }
+
+    .title::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+    }
+
+    .message,
+    .signin {
+        color: rgba(88, 87, 87, 0.822);
+        font-size: 14px;
+    }
+
+    .signin {
+        text-align: center;
+    }
+
+    .signin a {
+        color: royalblue;
+    }
+
+    .signin a:hover {
+        text-decoration: underline royalblue;
+    }
+
+    .flex {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .form label {
+        position: relative;
+    }
+
+    .form label .input {
+        width: 93%;
+        padding: 10px 8px 20px 6px;
+        outline: 0;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 10px;
+    }
+
+    .form label .input+span {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        color: grey;
+        font-size: 0.9em;
+        cursor: text;
+        transition: 0.3s ease;
+    }
+
+    .form label .input:placeholder-shown+span {
+        top: 15px;
+        font-size: 0.9em;
+    }
+
+    .form label .input:focus+span,
+    .form label .input:valid+span {
+        top: 30px;
+        font-size: 0.7em;
+        font-weight: 600;
+    }
+
+    .form label .input:valid+span {
+        color: green;
+    }
+
+    .button {
+        display: inline-block;
+        border-radius: 7px;
+        border: none;
+        background: #1875ff;
+        color: white;
+        font-family: inherit;
+        text-align: center;
+        font-size: 13px;
+        width: 10em;
+        padding: 1em;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.4s;
+    }
+
+    .button span:after {
+        content: "Users";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.7s;
+    }
+
+    .button:hover span {
+        padding-right: 3.55em;
+    }
+
+    .button:hover span:after {
+        opacity: 4;
+        right: 0;
+    }
+
+    @keyframes pulse {
+        from {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+        to {
+            transform: scale(1.8);
+            opacity: 0;
+        }
+    }
+
+    .dashboard {
+        margin: 19px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dashboard:hover {
+        color: red;
+    }
+</style>
+
+<body>
+    <%- include ('E:/software/we&css/form/tepleats/partials/adminnevbar.hbs') %>
+        <div class="Registrar">
+            <h1>Edit user informetion by Admin</h1>
+            <i class="fa-light fa-backward"></i>
+            <a class="dashboard" href="/admin/dashboard">
+                <= Go To Home</a>
+                    <form class="form" action="" method="POST">
+                        <p class="title">This Is Edit User by Admin</p>
+                        <div class="flex">
+                            <label>
+                                <input name="Firstname" placeholder="" class="input" type="text" value="<%= users.Firstname %>" class="input" />
+                                <span>Firstname</span>
+                            </label>
+                            <label>
+                                <input name="Lastname" placeholder="" class="input" type="text" value="<%= users.Lastname %>" class="input" />
+                                <span>Lastname</span>
+                            </label>
+                        </div>
+                        <label>
+                            <input name="Email"  placeholder="" type="email" value="<%= users.Email %>" class="input" />
+                            <span>Email</span>
+                        </label>
+                        <label>
+                            <span>What is your gender?</span><br>
+                            <input type="radio" name="gender" value="<%= users.gender = "Male" %>"> Male 
+                            <input type="radio" name="gender" value="<%= users.gender= "Female" %>"> Female
+                        </label>
+                        <label>
+                            <input name="ContectNumber"  placeholder="" type="tel" value="<%= users.ContectNumber %>" class="input" />
+                            <span>Contect Number</span>
+                        </label>
+                        <label>
+                            <span>verification ?</span><br>
+                            <input name="is_verified"  value="1" type="radio" <% if(users.is_verified == 1 ){ %> checked <% } %> > verified
+                            <input name="is_verified"  value="0" type="radio" <% if(users.is_verified == 0 ){ %> checked <% } %> > Unverified
+                        </label>
+                    
+                <button class="button" style="vertical-align: middle">
+                    <input type="hidden" name="id" value="<%= users._id %>" > 
+                    <!-- uper ni id no use /admin/edituser na post ethord ma tahy che kem ke tena besa pr deta leva ma ave che -->
+                    <span>Uplod</span>
+                </button>
+            </form>
+            <%- include('E:/software/we&css/form/tepleats/views/footer.hbs') %>
+        </div>
+</body>
+</html>

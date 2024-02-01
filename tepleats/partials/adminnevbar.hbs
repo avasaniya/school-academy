@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+  nav {
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+  }
+
+  ul {
+    height: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+
+  }
+
+  li {
+    float: left;
+
+  }
+
+  .a {
+    padding: 10px;
+    margin: 0px 0px 0px 3px;
+    color: #ffffff;
+    display: flex;
+    text-decoration: none;
+  }
+
+  .a:hover {
+    color: #ff9393;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    color: #ff9393;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+
+<body>
+  <div class="nav">
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <ul>
+         <li><a class="a" href="/admin/home">home</a></li>
+         <li><a class="a" href="/admin/login">Login us</a></li>
+         <li><a class="a" href="/admin/logut">logut Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>

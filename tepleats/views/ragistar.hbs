@@ -8,17 +8,22 @@
 </head>
 <style>
     body {
-
         margin: 0;
         padding: 0;
-        list-style: none;
-        background-color: #52aadd;
-        height: 700px;
+        background-color: lightblue;
+
+    }
+
+    .Registrar {
+        height: 200px;
+        background-color: black;
+        margin: -22px 0px;
     }
 
     h1 {
         text-align: center;
-        padding: 0px 0px;
+        padding: 82px 9px;
+        color: aliceblue;
     }
 
     .form {
@@ -31,9 +36,9 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        max-width: 368px;
+        max-width: 351px;
         background-color: #fff;
-        padding: 26px;
+        padding: 40px;
         border-radius: 33px;
         position: relative;
     }
@@ -189,47 +194,49 @@
 
 <body>
     {{>nevbar}}
-    <h1>Registrar Us</h1>
-    <form class="form" action="/ragistar" method="POST">
-        <p class="title">This Is Registrar Us</p>
-        <p class="message"></p>
-        <div class="flex">
+    <div class="Registrar">
+        <h1>Registrar Us</h1>
+        <form class="form" action="/ragistar" method="POST">
+            <p class="title">This Is Registrar Us</p>
+            <div class="flex">
+                <label>
+                    <input name="Firstname" placeholder="" type="text" class="input" />
+                    <span>Firstname</span>
+                </label>
+                <label>
+                    <input name="Lastname" required="" placeholder="" type="text" class="input" />
+                    <span>Lastname</span>
+                </label>
+            </div>
             <label>
-                <input name="Firstname" placeholder="" type="text" class="input" />
-                <span>Firstname</span>
+                <span>What is your gender?</span><br>
+                <input type="radio" name="gender" required="" value="male"> Male <input type="radio" name="gender"
+                    required="" value="female"> Female
             </label>
             <label>
-                <input name="Lastname" required="" placeholder="" type="text" class="input" />
-                <span>Lastname</span>
+                <input name="Email" required="" placeholder="" type="email" class="input" />
+                <span>Email</span>
             </label>
-        </div>
-        <label>
-            <span>What is your gender?</span><br>
-            <input type="radio" name="gender" required="" value="male"> Male <input type="radio" name="gender"
-                required="" value="female"> Female
-        </label>
-        <label>
-            <input name="Email" required="" placeholder="" type="email" class="input" />
-            <span>Email</span>
-        </label>
-        <label>
-            <input name="ContectNumber" required="" placeholder="" type="tel" class="input" />
-            <span>Contect Number</span>
-        </label>
-        <label>
-            <input name="Password" type="Password" placeholder="" id="password" required="" class="input">
-            <span>password</span>
-        </label>
-        <label>
-            <input name="ConfirmPassword" type="Confirm Password" id="confirm_password" placeholder="" required=""
-                class="input">
-            <span>Confirm Password</span>
-        </label>
-        <button class="button" style="vertical-align: middle" >
-            <span>Registrar</span>
-        </button>
-    </form>
-    {{>footer}}
+            <label>
+                <input name="ContectNumber" required="" placeholder="" type="tel" class="input" />
+                <span>Contect Number</span>
+            </label>
+            <label>
+                <input name="Password" type="Password" placeholder="" id="password" required="" class="input">
+                <span>password</span>
+            </label>
+            <label>
+                <input name="ConfirmPassword" type="Confirm Password" id="confirm_password" placeholder="" required=""
+                    class="input">
+                <span>Confirm Password</span>
+            </label>
+            <button class="button" style="vertical-align: middle">
+                <span>Registrar</span>
+            </button>
+        </form>
+
+        {{>footer}}
+    </div>
 </body>
 
 </html>

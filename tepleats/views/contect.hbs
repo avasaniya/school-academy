@@ -10,10 +10,8 @@
     body {
         margin: 0;
         padding: 0;
-        list-style: none;
-        background-color: #52aadd;
-        height: 1300px;
-    }
+        background-color: lightblue;    
+}
 
     h1 {
         text-align: center;
@@ -185,22 +183,13 @@
         }
     }
 
-    .footer {
-        background-color: rgb(0, 0, 0);
-        height: 50px;
-        color: aliceblue;
-        text-align: center;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
 </style>
 <body>
     {{>nevbar}}
     <h1>Contect Us</h1>
-    <form class="form" action="/contect" method="POST">
+    <form class="form" action="/contect"  enctype="multipart/form-data" method="POST">
         <p class="title">this is contect us</p>
-        <p class="message"></p>
+        
         <div class="flex">
             <label>
                 <input name="Firstname" placeholder="" type="text" class="input" />
@@ -239,6 +228,10 @@
         <label>
             <input name="ContectNumber" required="" placeholder="" type="tel" class="input" />
             <span>ContectNumber</span>
+        </label>
+        <label>
+            <span>upload image</span><br>
+            <input name="myfiles" type="file" required="">
         </label>
         <label>
             <input name="Message" required="" placeholder="" type="message" class="input" />

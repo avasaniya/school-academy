@@ -8,17 +8,21 @@
 </head>
 <style>
     body {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightblue;
+    }
 
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        background-color: rgb(66, 143, 198);
-         height: 700px;
+    .login {
+        height: 200px;
+        background-color: black;
+        margin: -22px 0px;
     }
 
     h1 {
         text-align: center;
-        padding: 16px 0px;
+        padding: 83px 0px;
+        color: #fff;
     }
 
     .form {
@@ -39,7 +43,7 @@
     }
 
     .title {
- 
+
         color: rgb(0, 0, 0);
         font-weight: 600;
         position: relative;
@@ -47,7 +51,7 @@
         align-items: center;
         padding-left: 30px;
     }
-    
+
 
     .title::before,
     .title::after {
@@ -185,26 +189,60 @@
             opacity: 0;
         }
     }
+
+    .forgot {
+        color: rgb(0, 0, 0);
+        margin: 0px 224px 0px 0px;
+    }
+
+    .forgot:hover {
+        color: rgb(255, 0, 0);
+    }
+
+    .verification {
+        color: rgb(0, 0, 0);
+        margin: -10px 224px 0px 0px;
+    }
+
+    .verification:hover {
+        color: rgb(255, 0, 0);
+    }
 </style>
+
 <body>
     {{>nevbar}}
-    <h1>Login Us</h1>
-    <form class="form" action="/login" method="POST">
-        <p class="title">This Is Login</p>
-        <p class="message"></p>
-        <label>
+    <div class="login">
+        <h1>Login Us</h1>
+        <form class="form" action="/login" method="POST">
+            <p class="title">This Is Login</p>
+            <label>
                 <input name="Email" required="" placeholder="" type="text" class="input" />
                 <span>Email</span>
-        </label>
-        <label>
+            </label>
+            <label>
                 <input name="Password" required="" placeholder="" type="Password" class="input" />
                 <span>Password</span>
-        </label>
-        <button onclick="myFunctionn()" class="button" style="vertical-align: middle">
-            <span>Login</span>
-        </button>
-    </form>
-    {{>footer}}
+            </label>
+{{!-- Send Reset link --}}
+            <label>
+                <a href="/forgot" class="forgot"> Forgot Password ?</a>
+            </label>
+ {{!-- verifictionmail jo ragiter vakhate jo verify no karu hoy ane pachal thi karva nu thay tyare  --}}
+             <label>
+                <a href="/verifictionmail" class="verification"> verification Mail ? </a>
+            </label>
 
+            {{#if message}}
+                    <h4>{{message}}</h4>
+            {{/if}}
+
+            <button  class="button" style="vertical-align: middle">
+                <span>Login</span>
+            </button>
+
+
+        </form>
+        {{>footer}}
+    </div>
 </body>
 </html>

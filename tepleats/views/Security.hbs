@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security</title>
+    {{!-- <link rel="stylesheet" href="/public/css/Security.css"> --}}
+</head>
+<style>
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: lightblue;
+}
+.security{
+}
+.heding1{
+    background-color: rgb(0, 0, 0);
+     height: 400px;
+     border: 2px solid rgb(0, 0, 0);
+     color: aliceblue;
+    }
+.main{
+    text-align: center;
+    margin: 136px 0px;
+    padding: 1px 185px;
+}
+
+/*.heder{
+    border: 2px solid red;
+}*/
+
+.part1{
+    height:800px;
+}
+.heding2{
+    text-align: center;   
+}
+.pregraft{
+    text-align: -webkit-center;
+    padding: 1px 100px;
+    font-size: 20px;
+}
+
+</style>
+<body>
+    {{>nevbar}}
+        <div class="security">
+        <section class="heding1">
+            <dir class="main">
+                <h1 class="heder">Security @ Development IT Solutions</h1>
+                <h2 class="heder">We take security seriously</h2>
+            </dir>
+        </section>
+        <section class="part1">
+            <dir class="heding2">
+                <h1 >Security</h1>
+                <h4 >Development It Solutions strives to keep it's systems and services secure and protected against attempts to harm its clients' interests in any way.</h4>
+            </dir>
+            <div class="pregraft">
+                    <p>Best practices<p></p>
+                    <p>We try to always adhere to industry standard best practices with regards to the security of the platforms and applications we use and develop. We use infrastructure provided by VULTR, Amazon Web Services, Linode, and Digital Ocean. These are all widely recognised as reputable infrastructure and service providers. On top of this infrasturcture we use Ubuntu LINUX LTS operating systems. We install security updates to these systems as and when they get released. Most applications we host run on a LEMP (LINUX nGinx MySQL PHP) stack. Servers are most manageged through Laravel Forge. Source code is managed by Atlassian bitbucket and deployment of applcations is usually managed through Laravel Envoyer. The applications we build are mostly based on the Laravel web application framework. We design our applications always with security in mind.</p>
+                    <p>Despite the fact that we take all precautions we can think of, we can and we do make mistakes and we also rely on systems and infrastructure developed and maintained by others that might make mistakes. No internet based system is completely secure. We way risks and measures together with our clients and then balance security requirements versus effort and cost.</p>
+            </div>
+            <div class="heding2">
+                    <h1>If we do mess up, please let us know?</h1>
+            </div>
+            <div class="pregraft">
+                <p>If you find any security issues on our platforms or in our applications please do let us know? Please send an email to security@dits-sa.com detailing your findings and possible recommendations? We will be much obliged!</p>
+            </div>
+            <div class="heding2">
+                    <h1>Acknowledgements</h1>
+            </div>
+            <div class="pregraft">
+                <p>In the list below we will ackowledge all who alerted us to genuine security issues related to our infrastructure, sevrice, and applications.</p>
+            </div>
+        </section>
+    {{!-- {{>footer}} --}}
+</body>
+</html>

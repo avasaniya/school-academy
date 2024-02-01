@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Details</title>
+</head>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightblue;
+    }
+
+    .Update {
+        height: 200px;
+        background-color: rgb(0, 0, 0);
+        margin: -22px 0px;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 83px 0px;
+        color: #fff;
+    }
+
+    .form {
+        border: 2px solid rgb(0, 0, 0);
+        margin: 57px 466px;
+    }
+
+    .flex {
+        margin: 30px;
+    }
+
+    span {
+        display: block;
+        margin: 4px 11px -19px;
+    }
+
+    input {
+        margin: 10px 6px 12px 41px;
+    }
+
+    .input {
+        margin: 8px 20px;
+        padding: 5px 47px 4px 6px;
+        text-align: start;
+    }
+
+    .button {
+        margin: 2px;
+    }
+
+    .button1 {
+        margin: 1px 0px 1px 13px;
+    }
+
+    .button2 {
+        margin: 1px 0px 1px 32px;
+    }
+</style>
+
+<body>
+    {{>nevbar}}
+    <div class="Update">
+        <h1>Update Details</h1>
+        <form class="form" action="" method="post" enctype="multipart/form-data">
+            <div class="flex">
+                <input type="hidden" name="user_id" value="{{user._id}}"/>
+                <label>
+                    <span class="spen">Firstname</span><br>
+                    <input class="input" name="Firstname" value="{{user.Firstname}}" placeholder="Firstname" type="text"
+                        /><br>
+                </label>
+                <label>
+                    <span class="spen">Lastname</span><br>
+                    <input class="input" name="Lastname" value="{{user.Lastname}}" placeholder="Lastname" type="text"
+                        required="" /><br>
+                </label>
+                <label>
+                    <span class="spen">Email</span><br>
+                    <input class="input" name="Email" value="{{user.Email}}" placeholder="Email" type="email"
+                         /><br>
+                </label>
+                <label>
+                    <span class="spen">What is your gender?</span><br>
+                    <input type="radio" name="gender" required="" value="{{user.gender}}"> Male
+                    <input type="radio" name="gender" required="" value="{{user.gender}}"> Female<br>
+                </label>
+                <label>
+                    <span class="spen">ContectNumber</span><br>
+                    <input class="input" name="ContectNumber" value="{{user.ContectNumber}}" placeholder="ContectNumber"
+                        type="tel" /><br>
+                </label>
+                <button class="button1" style="vertical-align: middle">
+                    <span class="button">save Details</span>
+                </button>
+                {{!-- <button class="button2">
+                    <span class="button"> cancel </span>
+                </button> --}}
+            </div>
+        </form>
+        {{>footer}}
+    </div>
+
+</body>
+
+</html>

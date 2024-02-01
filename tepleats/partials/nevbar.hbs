@@ -1,49 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>My Navbar</title>
 </head>
 <style>
-nav {
+  body {
+    margin: 0px;
+    padding: 0px;
 
-  background-color: rgb(0, 0, 0);
-  color: #ffffff;
-  padding: 7px;
-}
+  }
 
-ul {
+  nav {
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+  }
 
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  ul {
+    height: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
 
-}
-li {
- 
-  display: inline-block;
-  margin: 10px;
-   
-  
-}
+  }
 
-a {
-   color: #ffffff;
+  li {
+    float: left;
+
+  }
+
+  a {
+    padding: 10px;
+    margin: 0px 0px 0px 3px;
+    color: #ffffff;
+    display: flex;
     text-decoration: none;
-}
-a:hover{
-   color: #ff9393;
-}
+  }
+
+  a:hover {
+    color: #ff9393;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    color: #ff9393;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 </style>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/login">Login Us</a></li>
-      <li><a href="/secreatkey">Secure Us</a></li>
-      <li><a href="/ragistar">Registrar Us</a></li>
-      <li><a href="/contect">Contect Us</a></li>
-      <li><a href="/logout">Logout Us</a></li>
-    </ul>
-  </nav>
+  <div class="nav">
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/Security">Security</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">About 
+            <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="20" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+              <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+            </svg>
+          </a>
+          <div class="dropdown-content">
+            <a href="/aboutus">About Us</a>
+            <a href="/ourteam">Our Team</a>
+          </div>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropbtn">Insights
+            <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="20" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+              <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+            </svg>
+          </a>
+          <div class="dropdown-content">
+            <a href="/Blog">Blog</a>
+            <a href="/PublicationsPolicyBriefs">Publications & Policy Briefs</a>
+            
+          </div>
+        </li>
+        <li><a href="/contect">Contect</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Login/Registrar
+            <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="20" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+              <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+            </svg>
+          </a>
+          <div class="dropdown-content">
+                <a href="/profile">profile</a>
+                <a href="/ragistar">Registrar Us</a>  
+                <a href="/login">Login Us</a> 
+                <a href="/logout">Logout Us</a> 
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </body>
+
 </html>
